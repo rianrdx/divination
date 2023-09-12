@@ -7,11 +7,7 @@ let xAttemps = 1
 
 btnTry.addEventListener('click', handleTryClick)
 btnReset.addEventListener('click', handleResetClick)
-document.addEventListener('keydown', function(e) {
-  if(e.key == 'Enter' && screen1.classList.contains('hide')){
-    handleResetClick()
-  }
-})
+document.addEventListener('keydown', setEnter)
 
 function handleTryClick(event) {
   event.preventDefault()
@@ -36,4 +32,10 @@ function handleResetClick() {
 function toggleScreen() {
   screen1.classList.toggle('hide')
   screnn2.classList.toggle('hide')
+}
+
+function setEnter(e) {
+  if(e.key == 'Enter' && screen1.classList.contains('hide')){
+    handleResetClick()
+  }
 }
